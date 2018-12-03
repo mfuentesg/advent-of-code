@@ -3,12 +3,17 @@
 import sys
 import itertools
 
-frequencies = {0}
-r = 0
+
+# part 1
 lines = [int(x) for x in sys.stdin.readlines()]
+print(sum(lines))
+
+# part 2
+freq={0}
+r = 0
 for n in itertools.cycle(lines):
-    r += n
-    if r in frequencies:
+    r+=n
+    if r in freq:
         break
-    frequencies.add(r)
+    freq.add(r)
 print(r)
